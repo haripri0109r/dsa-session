@@ -95,16 +95,7 @@ public class Main {
         display(node.right);
     }
 
-    // ---------- MAIN FUNCTION ----------
-    public static void main(String[] args) {
-
-        int[] arr = {1,2,4,-1,5,-1,-1,3,6,-1,-1,7,-1,-1};
-
-        Node root = createTree(arr);
-
-        display(root);
-    }
-
+       //Size of a binary tree
     public static int size(Node node){
         if(node==null){
             return 0;
@@ -116,5 +107,29 @@ public class Main {
         }
     }
 
+    //Maximum value in a binary tree
+    public static int max(Node node){
+        if(node==null){
+            return Integer.MIN_VALUE;
+        }
+        else {
+            int mleft=max(node.left);
+            int mright=max(node.right);
+            return Math.max(node.data,Math.max(mleft,mright));
+        }
 
+    // ---------- MAIN FUNCTION ----------
+    public static void main(String[] args) {
+
+        int[] arr = {1,2,4,-1,5,-1,-1,3,6,-1,-1,7,-1,-1};
+
+        Node root = createTree(arr);
+        
+
+        display(root);
+        System.out.println("Size of the tree: " + size(root));
+        System.out.println("Maximum value in the tree: " + max(root));
+        
+    }
+ 
 }
