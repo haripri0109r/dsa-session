@@ -137,6 +137,15 @@ public class Main {
 
         return sleft + sright + node.data;
     }
+    public static int height(Node node) {
+        if (node == null)
+            return -1;
+
+        int hleft = height(node.left);
+        int hright = height(node.right);
+
+        return Math.max(hleft, hright) + 1;
+    }
 
     // ---------- MAIN ----------
     public static void main(String[] args) {
