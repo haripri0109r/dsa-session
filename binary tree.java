@@ -105,5 +105,16 @@ public class Main {
         display(root);
     }
 
-    
+    public static int size(Node node){
+        if(node==null){
+            return 0;
+        }
+        else {
+            int sleft=size(node.left);
+            int sright=size(node.right);
+            return sleft+sright+1;
+        }
+    }
+
+
 }
