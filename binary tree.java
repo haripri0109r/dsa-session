@@ -118,6 +118,20 @@ public class Main {
             return Math.max(node.data,Math.max(mleft,mright));
         }
 
+        //Minimum value in a binary tree
+    public static int min(Node node){
+        if(node==null){
+            return Integer.MAX_VALUE;
+        }
+        else {
+            int mleft=min(node.left);
+            int mright=min(node.right);
+            return Math.min(node.data,Math.min(mleft,mright));
+        }
+    }   
+
+ 
+
     // ---------- MAIN FUNCTION ----------
     public static void main(String[] args) {
 
@@ -129,7 +143,7 @@ public class Main {
         display(root);
         System.out.println("Size of the tree: " + size(root));
         System.out.println("Maximum value in the tree: " + max(root));
-        
+
     }
  
 }
