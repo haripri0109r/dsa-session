@@ -129,8 +129,17 @@ public class Main {
             return Math.min(node.data,Math.min(mleft,mright));
         }
     }   
-
- 
+//sum of a binary tree
+    public static int sum(Node node){
+        if(node==null){
+            return 0;
+        }
+        else {
+            int sleft=sum(node.left);
+            int sright=sum(node.right);
+            return sleft+sright+node.data;
+        }
+    } 
 
     // ---------- MAIN FUNCTION ----------
     public static void main(String[] args) {
